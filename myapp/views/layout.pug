@@ -2,6 +2,39 @@ doctype html
 html
   head
     title= title
-    link(rel='stylesheet', href='/stylesheets/style.css')
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    link(rel='stylesheet', href='stylesheets/main.css')
   body
-    block content
+    #page-wrap
+      // Nav
+      nav#nav
+        ul 
+          li 
+            a(href='/')
+              span(class='icon fa-home')
+          li 
+            a(href='gallery.html')
+              span(class='icon fa-camera-retro')
+          li
+            a(href='generic', class='active')
+              span(class='icon fa-file-text-o')
+      // Main
+      section#main
+        // Header
+        header#header
+          div Snapshot 
+          span by GABE
+        block content
+        // Footer
+        footer#footer
+          #copyright &copy; 
+            a(href='http://dds.cct.lsu.edu') DDS Lab
+    // Scripts
+    script(src='javascripts/jquery.min.js')
+    script(src='javascripts/jquery.poptrox.min.js')
+    script(src='javascripts/jquery.scrolly.min.js')
+    script(src='javascripts/skel.min.js')
+    script(src='javascripts/util.js')
+    script(src='javascripts/skel.min.js')
+    script(src='javascripts/main.js')
