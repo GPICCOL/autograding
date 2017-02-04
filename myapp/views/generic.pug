@@ -5,40 +5,70 @@ block content
     .inner
       header  
         h1= area
-      h2= topic
-      p= question
-      // Form
-      .column
-        h2 Answer
-        form(action='#', method='post')
-          .field
-            label(for='message') Type your answer
-            textarea(
-              name='message'
-              id='message'
-              rows='6'
-              placeholder='Message'
-              )
-          ul.actions
-            li
-              input(
-                value='Send Message'
-                class='button'
-                type='submit'
-                )
-      h2 Ultricies Senectus Magnis
-      p.
-        Scelerisque sagittis magna mi duis iaculis id erat pharetra vestibulum condimentum hac suspendisse tempor leo aliquet penatibus parturient donec parturient parturient. Vehicula suspendisse sem a adipiscing est ad donec ultricies senectus magnis convallis a fringilla adipiscing vulputate dui elementum diam ipsum eleifend condimentum placerat facilisi viverra mollis scelerisque. Commodo cum vestibulum hendrerit sit condimentum at rutrum vulputate scelerisque erat convallis himenaeos consequat a hac ultrices nam vel suspendisse nascetur dictum vulputate sed at.
       section(class='columns double')
-        .column
-          span(class='image left special')
-            img(src='images/pic01.jpg', alt='')
-          h3 Parturient Consequat Neque
-          p.
-            Adipiscing dis a mus a convallis condimentum molestie penatibus iaculis pulvinar vestibulum enim lacus suscipit mi dictumst hendrerit sit condimentum at rutrum vulputate vestibulum habitasse nam fusce a nascetur. Ut ullamcorper suspendisse malesuada tempus vestibulum commodo habitasse suspendisse magnis.
+        // Question image and text
         .column
           span(class='image left special')
             img(src='images/pic02.jpg', alt='')
-          h3 Ridiculus Torquent Quam Accumsan
-          p.
-            At sem phasellus elit class dapibus lectus posuere donec morbi in cras commodo faucibus ipsum vehicula fringilla. Risus hendrerit sit condimentum at rutrum vulputate fringilla dis curae metus ipsum imperdiet vulputate sapien dolorem ligula sapien curae consequat vestibulum urna. Nulla vulputate cum augue non arcu.
+          h3 Question: #{topic}
+          p= question
+        // Answer input box
+        .column
+          h3 Provide your answer
+          form(action='#', method='post')
+          .field
+            textarea(
+              name='message'
+              id='message'
+              rows='3'
+              placeholder='Type your answer here. The limit is xx characters.'
+              )
+          ul.tabs
+            li
+              a(
+                href='#',
+                data-tag='all',
+                class='button'
+                ) Confident
+            li
+              a(
+                href='#',
+                data-tag='all',
+                class='button'
+                ) Unsure
+            li
+              a(
+                href='#',
+                data-tag='all',
+                class='button'
+                ) No idea    
+      h2 Correct Answer
+      section(class='columns double')
+        // Correct answer 
+        .column
+          h3 Answer: #{topic}
+          p= correct
+        // Feedback input box
+        .column
+          h3 Feedback Form
+          form(action='#', method='post')
+          .field
+            textarea(
+              name='message'
+              id='feedback'
+              rows='3'
+              placeholder='If you believe your answer is correct, please explain why.'
+              )
+          ul.tabs
+            li
+              a(
+                href='#',
+                data-tag='submit',
+                class='button'
+                ) Submit
+            li
+              a(
+                href='#',
+                data-tag='cancel',
+                class='button'
+                ) Cancel
