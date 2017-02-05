@@ -9,16 +9,40 @@ html
     .page-wrap
       // Nav
       nav#nav
-        ul 
-          li 
-            a(href='/')
-              span(class='icon fa-home')
-          li 
-            a(href='gallery.html')
-              span(class='icon fa-camera-retro')
-          li
-            a(href='generic', class='active')
-              span(class='icon fa-file-text-o')
+        case title
+          when "Autograder"
+            ul 
+              li 
+                a(href='/', class='active')
+                  span(class='icon fa-home')
+              li
+                a(href='generic')
+                  span(class='icon fa-file-text')
+              li 
+                a(href='results')
+                  span(class='icon fa-camera-retro')
+          when "Question Page"
+            ul 
+              li 
+                a(href='/')
+                  span(class='icon fa-home')
+              li
+                a(href='generic', class='active')
+                  span(class='icon fa-file-text-o')
+              li 
+                a(href='results')
+                  span(class='icon fa-camera-retro')
+          when "Results Page"
+            ul 
+              li 
+                a(href='/')
+                  span(class='icon fa-home')
+              li
+                a(href='generic')
+                  span(class='icon fa-file-text-o')
+              li 
+                a(href='results', class='active')
+                  span(class='icon fa-camera-retro')
       // Main
       section#main
         // Header

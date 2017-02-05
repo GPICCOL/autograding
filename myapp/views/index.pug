@@ -1,9 +1,13 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
-  p.
-    This is the first stab a the Autograding Site.
-    Gabe is the author here
-  a(href = 'generic') Here you go to the DDS Lab Website
+  section
+    .inner
+      header
+        h1= title
+        section
+          p Welcome to #{title}
+          p.
+            This is the first stab a the Autograding Site.
+            Gabe is the author here
+          a(href = 'generic') Here you go to the DDS Lab Website
